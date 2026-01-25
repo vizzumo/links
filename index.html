@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vizzumo | Design que Vibra</title>
+    <style>
+        /* Cores e Variáveis */
+        :root {
+            --azul-petroleo: #004B57;
+            --verde-agua: #20E2B2;
+            --branco: #F4F4F4;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--azul-petroleo);
+            /* Background Oficial */
+            background-image: url('vizzumo-02.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            
+            color: var(--branco);
+            font-family: 'Segoe UI', sans-serif; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+
+        /* Container do Símbolo Vizzumo */
+        .logo-circle {
+            width: 90px;
+            height: 90px;
+            border: 2px solid var(--verde-agua);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 20px rgba(32, 226, 178, 0.4);
+            background: rgba(0, 75, 87, 0.4);
+            backdrop-filter: blur(8px);
+            overflow: hidden;
+        }
+
+        .logo-circle img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* Logotipo Tipográfico */
+        .logo-typographic {
+            width: 200px; 
+            height: auto;
+            margin-bottom: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        p.tagline {
+            font-size: 1rem;
+            color: var(--verde-agua);
+            margin-bottom: 45px;
+            font-style: italic;
+            letter-spacing: 1px;
+            margin-top: 0;
+        }
+
+        /* Botões / Frequências */
+        .link-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: var(--branco);
+            text-decoration: none;
+            display: block;
+            padding: 20px;
+            margin-bottom: 18px;
+            border-radius: 12px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .link-card:hover {
+            background: var(--verde-agua);
+            color: var(--azul-petroleo);
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px rgba(32, 226, 178, 0.3);
+            border-color: var(--verde-agua);
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 50px 20px;
+            font-size: 0.65rem;
+            opacity: 0.8;
+            letter-spacing: 2px;
+            line-height: 1.5;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="logo-circle">
+            <img src="Símbolo PNG (2).png" alt="Símbolo Vizzumo">
+        </div>
+
+        <img src="Logotipo Tipográfico PNG (3).png" alt="Vizzumo" class="logo-typographic">
+        
+        <p class="tagline">Design que vibra.</p>
+
+        <a href="https://www.behance.net/vizzumo" target="_blank" class="link-card">Portfólio: Extração & Impacto</a>
+        
+        <a href="#" class="link-card">Nossa Metodologia (3 Atos)</a>
+        
+        <a href="#" class="link-card">Solicitar Orçamento Estratégico</a>
+        
+        <a href="https://www.instagram.com/vizzumo/" target="_blank" class="link-card">Instagram</a>
+
+        <footer>
+            Design não é sobre inventar o novo,<br>é sobre extrair o que é real.
+        </footer>
+    </div>
+
+</body>
+</html>
