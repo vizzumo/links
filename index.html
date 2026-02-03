@@ -6,8 +6,8 @@
     <title>vizzumo | Branding</title>
     
     <link rel="icon" type="image/png" href="favicon.png">
-
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap">
+    
     <style>
         /* Reset e Estilos Gerais */
         * { 
@@ -19,16 +19,8 @@
             scrollbar-color: #06AEB3 #000;
         }
         
-        ::-webkit-scrollbar {
-            width: 10px;
-            background-color: #000; 
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background-color: #06AEB3; 
-            border-radius: 10px;
-            border: 2px solid #000; 
-        }
+        ::-webkit-scrollbar { width: 10px; background-color: #000; }
+        ::-webkit-scrollbar-thumb { background-color: #06AEB3; border-radius: 10px; border: 2px solid #000; }
 
         html.lenis { height: auto; }
         .lenis.lenis-smooth { scroll-behavior: auto !important; }
@@ -41,7 +33,6 @@
             position: relative;
         }
 
-        /* --- ECLIPSE CENTRALIZADO NO RODAPÉ --- */
         .eclipse-bg {
             position: fixed;
             left: 50%;
@@ -198,7 +189,6 @@
         .accordion-item.active .accordion-content { max-height: 600px; }
         .accordion-item.active .icon { transform: rotate(180deg); }
 
-        /* --- SEÇÃO CTA (CENTRALIZADO) --- */
         .cta-section {
             padding: 100px 5%;
             display: flex;
@@ -246,13 +236,32 @@
             color: #fff;
         }
 
+        /* --- FOOTER --- */
         footer { padding: 0 5% 40px; }
         .footer-line { border-top: 2px solid #333; padding-top: 80px; }
-        .footer-top { display: flex; justify-content: space-between; margin-bottom: 80px; }
+        .footer-top { display: flex; justify-content: space-between; margin-bottom: 80px; flex-wrap: wrap; gap: 40px; }
         .footer-contact-title { font-size: 2rem; }
         .footer-contact-title::before { content: ""; display: block; width: 30px; height: 2px; background: #06AEB3; margin-bottom: 15px; }
-        .footer-email-box a { font-size: clamp(1.2rem, 3vw, 1.8rem); color: #06AEB3; text-decoration: none; }
         
+        .social-links { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }
+        .social-item { 
+            display: flex; 
+            align-items: center; 
+            text-decoration: none; 
+            color: #06AEB3; 
+            font-size: 1rem; 
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .social-item:hover { opacity: 0.7; transform: translateX(5px); }
+        
+        /* Corrigindo a cor dos ícones SVG para o azul da marca */
+        .social-item svg { 
+            width: 28px; 
+            height: 28px; 
+            margin-right: 12px; 
+            fill: #06AEB3; 
+        }
+
         .footer-bottom { 
             border-top: 2px solid #333;
             padding-top: 30px; 
@@ -375,22 +384,40 @@
         </div>
         <div class="cta-content">
             <h2>Pronto para elevar sua identidade visual para o próximo nível?</h2>
-            <a href="#" class="cta-button">Solicite uma proposta</a>
+            <a href="https://wa.me/5598991317021" target="_blank" class="cta-button">Solicite uma proposta</a>
         </div>
     </section>
 
     <footer>
         <div class="footer-line"></div>
         <div class="footer-top">
-            <div class="footer-contact-title">Contato</div>
+            <div class="footer-contact-title">Contatos</div>
+            
             <div class="footer-email-box">
-                <p style="color: #888; margin-bottom: 5px;">Projetos e colaborações:</p>
-                <a href="mailto:vizzumo@gmail.com">vizzumo@gmail.com</a>
+                <div class="social-links">
+                    <a href="mailto:vizzumo@gmail.com" target="_blank" class="social-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M227.32,28.68a16,16,0,0,0-15.66-4.08l-.15,0L19.57,82.84a16,16,0,0,0-2.49,29.8L102,154l41.3,84.87A15.86,15.86,0,0,0,157.74,248q.69,0,1.38-.06a15.88,15.88,0,0,0,14-11.51l58.2-191.94c0-.05,0-.1,0-.15A16,16,0,0,0,227.32,28.68ZM157.83,231.85l-.05.14,0-.07-40.06-82.3,48-48a8,8,0,0,0-11.31-11.31l-48,48L24.08,98.25l-.07,0,.14,0L216,40Z"></path></svg>
+                        vizzumo@gmail.com
+                    </a>
+
+                    <a href="https://behance.net/vizzumo" target="_blank" class="social-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M160,80a8,8,0,0,1,8-8h64a8,8,0,0,1,0,16H168A8,8,0,0,1,160,80Zm-24,78a42,42,0,0,1-42,42H32a8,8,0,0,1-8-8V64a8,8,0,0,1,8-8H90a38,38,0,0,1,25.65,66A42,42,0,0,1,136,158ZM40,116H90a22,22,0,0,0,0-44H40Zm80,42a26,26,0,0,0-26-26H40v52H94A26,26,0,0,0,120,158Zm128-6a8,8,0,0,1-8,8H169a32,32,0,0,0,56.59,11.2,8,8,0,0,1,12.8,9.61A48,48,0,1,1,248,152Zm-17-8a32,32,0,0,0-62,0Z"></path></svg>
+                        behance.net/vizzumo
+                    </a>
+
+                    <a href="https://instagram.com/vizzumo" target="_blank" class="social-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path></svg>
+                        instagram.com/vizzumo
+                    </a>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="footer-copyright">
                 ©2026 vizzumo – São Luís/Brasil
+            </div>
+            <div class="footer-links">
+                <a href="#inicio">Voltar ao topo</a>
             </div>
         </div>
     </footer>
