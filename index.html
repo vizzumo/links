@@ -58,13 +58,6 @@
             animation: pulse-glow-bottom 8s ease-in-out infinite alternate;
         }
 
-        @media (max-width: 768px) {
-            .eclipse-bg {
-                width: 150vw; 
-                height: 75vw;
-            }
-        }
-
         @keyframes constant-vibration {
             0% { transform: translate(0); text-shadow: 0 0 5px rgba(6, 174, 179, 0.2); }
             25% { transform: translate(-0.5px, 0.5px); text-shadow: 0 0 10px rgba(6, 174, 179, 0.5); }
@@ -140,7 +133,6 @@
         }
         .project-card { margin-bottom: 20px; cursor: pointer; text-decoration: none; color: inherit; }
         
-        /* ATUALIZADO: Arredondamento igual ao accordion (4px) */
         .project-image { 
             background-color: #1a1a1a; 
             aspect-ratio: 16/10; 
@@ -178,7 +170,7 @@
             background: #000;
             margin-bottom: 15px;
             border: 2px solid #333;
-            border-radius: 4px; /* Referência do arredondamento */
+            border-radius: 4px;
         }
         
         .accordion-header {
@@ -223,7 +215,14 @@
         }
         .footer-links a { color: #fff; text-decoration: none; margin-right: 20px; }
 
+        /* --- MEDIA QUERIES (MOBILE) --- */
         @media (max-width: 768px) {
+            .nav-links { display: none; } /* Remove informações, projetos e contatos no mobile */
+            
+            .eclipse-bg {
+                width: 150vw; 
+                height: 75vw;
+            }
             .projects { grid-template-columns: 1fr; }
             .footer-top { flex-direction: column; gap: 40px; }
             .footer-bottom { flex-direction: column; gap: 20px; }
