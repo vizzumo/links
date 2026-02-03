@@ -198,6 +198,54 @@
         .accordion-item.active .accordion-content { max-height: 600px; }
         .accordion-item.active .icon { transform: rotate(180deg); }
 
+        /* --- SEÇÃO CTA (CENTRALIZADO) --- */
+        .cta-section {
+            padding: 100px 5%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 40px;
+            position: relative;
+            margin-top: -170px;
+            z-index: 1;
+        }
+
+        .cta-image img {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            display: block;
+        }
+
+        .cta-content h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            max-width: 800px;
+            margin-bottom: 50px;
+            font-weight: 500;
+            margin-top: -75px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 20px 45px;
+            background-color: #fff;
+            color: #000;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 50px;
+            border: 2px solid #fff;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            color: #fff;
+        }
+
         footer { padding: 0 5% 40px; }
         .footer-line { border-top: 2px solid #333; padding-top: 80px; }
         .footer-top { display: flex; justify-content: space-between; margin-bottom: 80px; }
@@ -215,14 +263,9 @@
         }
         .footer-links a { color: #fff; text-decoration: none; margin-right: 20px; }
 
-        /* --- MEDIA QUERIES (MOBILE) --- */
         @media (max-width: 768px) {
-            .nav-links { display: none; } /* Remove informações, projetos e contatos no mobile */
-            
-            .eclipse-bg {
-                width: 150vw; 
-                height: 75vw;
-            }
+            .nav-links { display: none; }
+            .eclipse-bg { width: 150vw; height: 75vw; }
             .projects { grid-template-columns: 1fr; }
             .footer-top { flex-direction: column; gap: 40px; }
             .footer-bottom { flex-direction: column; gap: 20px; }
@@ -298,39 +341,41 @@
         </div>
         
         <div class="accordion-item">
-            <button class="accordion-header">
-                Logotipo <span class="icon">↓</span>
-            </button>
+            <button class="accordion-header">Logotipo <span class="icon">↓</span></button>
             <div class="accordion-content">
                 <p>Entregamos o logotipo em formatos flexíveis para facilitar a aplicação da marca em diferentes pontos de contato...</p>
             </div>
         </div>
 
         <div class="accordion-item">
-            <button class="accordion-header">
-                Identidade Visual <span class="icon">↓</span>
-            </button>
+            <button class="accordion-header">Identidade Visual <span class="icon">↓</span></button>
             <div class="accordion-content">
                 <p>Desenvolvimento do universo visual completo: tipografia, paleta de cores, elementos gráficos...</p>
             </div>
         </div>
 
         <div class="accordion-item">
-            <button class="accordion-header">
-                Prototipagem <span class="icon">↓</span>
-            </button>
+            <button class="accordion-header">Prototipagem <span class="icon">↓</span></button>
             <div class="accordion-content">
-                <p>Criação de modelos visuais e simulações realistas (mockups)...</p>
+                <p>Criação de modelos visuais e simulações realistas (mockups) para visualização da marca...</p>
             </div>
         </div>
 
         <div class="accordion-item">
-            <button class="accordion-header">
-                Manual de marca <span class="icon">↓</span>
-            </button>
+            <button class="accordion-header">Manual de marca <span class="icon">↓</span></button>
             <div class="accordion-content">
-                <p>Documento técnico detalhado com todas as diretrizes de uso da marca...</p>
+                <p>Documento técnico detalhado com todas as diretrizes de uso da marca para manter a consistência.</p>
             </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-image">
+            <img src="Símbolo PNG (2).png" alt="Símbolo Vizzumo">
+        </div>
+        <div class="cta-content">
+            <h2>Pronto para elevar sua identidade visual para o próximo nível?</h2>
+            <a href="#" class="cta-button">Solicite uma proposta</a>
         </div>
     </section>
 
@@ -344,10 +389,6 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <div class="footer-links">
-                <a href="#">Instagram</a>
-                <a href="#">Behance</a>
-            </div>
             <div class="footer-copyright">
                 ©2026 vizzumo – São Luís/Brasil
             </div>
