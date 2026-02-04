@@ -155,13 +155,20 @@
         .btn-view-all .arrow { font-size: 1.5rem; transition: transform 0.3s ease; margin-left: 10px; }
         .btn-view-all:hover .arrow { transform: translateX(8px); }
 
-        .deliverables-container { padding: 20px 5% 80px; width: 100%; }
+        /* AJUSTE: Removemos conflitos de z-index */
+        .deliverables-container { 
+            padding: 20px 5% 40px; 
+            width: 100%; 
+            position: relative;
+        }
 
         .accordion-item {
             background: #000;
             margin-bottom: 15px;
             border: 2px solid #333;
             border-radius: 4px;
+            position: relative;
+            z-index: 20; /* Garante que os botões fiquem clicáveis */
         }
         
         .accordion-header {
@@ -189,16 +196,15 @@
         .accordion-item.active .accordion-content { max-height: 600px; }
         .accordion-item.active .icon { transform: rotate(180deg); }
 
+        /* MUDANÇA PRINCIPAL: Sem margem negativa agressiva */
         .cta-section {
-            padding: 100px 5%;
+            padding: 60px 5% 100px;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            gap: 40px;
+            gap: 20px;
             position: relative;
-            margin-top: -170px;
-            z-index: 1;
         }
 
         .cta-image img {
@@ -206,14 +212,14 @@
             max-width: 250px;
             height: auto;
             display: block;
+            margin-bottom: -40px; /* Sobreposição controlada apenas visualmente */
         }
 
         .cta-content h2 {
             font-size: clamp(1.8rem, 4vw, 2.8rem);
             max-width: 800px;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             font-weight: 500;
-            margin-top: -75px;
         }
 
         .cta-button {
@@ -236,7 +242,6 @@
             color: #fff;
         }
 
-        /* --- FOOTER --- */
         footer { padding: 0 5% 40px; }
         .footer-line { border-top: 2px solid #333; padding-top: 80px; }
         .footer-top { display: flex; justify-content: space-between; margin-bottom: 80px; flex-wrap: wrap; gap: 40px; }
@@ -253,14 +258,7 @@
             transition: opacity 0.3s ease, transform 0.3s ease;
         }
         .social-item:hover { opacity: 0.7; transform: translateX(5px); }
-        
-        /* Corrigindo a cor dos ícones SVG para o azul da marca */
-        .social-item svg { 
-            width: 28px; 
-            height: 28px; 
-            margin-right: 12px; 
-            fill: #06AEB3; 
-        }
+        .social-item svg { width: 28px; height: 28px; margin-right: 12px; fill: #06AEB3; }
 
         .footer-bottom { 
             border-top: 2px solid #333;
@@ -286,9 +284,7 @@
 
     <nav>
         <div class="logo">
-            <a href="#" class="logo-link">
-                <img src="vizzumo.png" alt="vizzumo" class="nav-logo">
-            </a>
+            <a href="#" class="logo-link"><img src="vizzumo.png" alt="vizzumo" class="nav-logo"></a>
         </div>
         <div class="nav-links">
             <a href="#">Informações</a>
@@ -302,79 +298,52 @@
         <h1>Para marcas que querem <span class="vibrate-text">vibrar</span> no mercado.</h1>
     </header>
 
-    <div class="section-header">
-        <h2>Projetos selecionados</h2>
-    </div>
+    <div class="section-header"><h2>Projetos selecionados</h2></div>
 
     <section class="projects">
         <div class="project-card">
             <div class="project-image"><img src="Frame 8.png" alt="Quinta do Norte"></div>
-            <div class="project-info">
-                <p>Identidade Visual</p>
-                <h2>Quinta do Norte</h2>
-            </div>
+            <div class="project-info"><p>Identidade Visual</p><h2>Quinta do Norte</h2></div>
         </div>
         <div class="project-card">
             <div class="project-image"><img src="Frame 9.png" alt="DoceDela"></div>
-            <div class="project-info">
-                <p>Identidade Visual</p>
-                <h2>DoceDela</h2>
-            </div>
+            <div class="project-info"><p>Identidade Visual</p><h2>DoceDela</h2></div>
         </div>
         <div class="project-card">
             <div class="project-image"><img src="Frame 6.png" alt="III JAJUR"></div>
-            <div class="project-info">
-                <p>Estratégia, Identidade Visual</p>
-                <h2>III JAJUR</h2>
-            </div>
+            <div class="project-info"><p>Estratégia, Identidade Visual</p><h2>III JAJUR</h2></div>
         </div>
         <div class="project-card">
             <div class="project-image"><img src="Frame 7.png" alt="Torre do Sol"></div>
-            <div class="project-info">
-                <p>Identidade Visual</p>
-                <h2>Torre do Sol - Park Hotel</h2>
-            </div>
+            <div class="project-info"><p>Identidade Visual</p><h2>Torre do Sol - Park Hotel</h2></div>
         </div>
     </section>
 
     <div class="all-projects-container">
-        <a href="#" class="btn-view-all">
-            <span>Ver todos os projetos</span>
-            <span class="arrow">→</span>
-        </a>
+        <a href="#" class="btn-view-all"><span>Ver todos os projetos</span><span class="arrow">→</span></a>
     </div>
 
     <section class="deliverables-container">
-        <div class="section-header" style="padding: 0; margin-bottom: 50px;">
-            <h2>Entregáveis</h2>
-        </div>
+        <div class="section-header" style="padding: 0; margin-bottom: 50px;"><h2>Entregáveis</h2></div>
         
         <div class="accordion-item">
             <button class="accordion-header">Logotipo <span class="icon">↓</span></button>
-            <div class="accordion-content">
-                <p>Entregamos o logotipo em formatos flexíveis para facilitar a aplicação da marca em diferentes pontos de contato...</p>
-            </div>
+            <div class="accordion-content"><p>Entregamos o logotipo em formatos flexíveis...</p></div>
         </div>
 
         <div class="accordion-item">
             <button class="accordion-header">Identidade Visual <span class="icon">↓</span></button>
-            <div class="accordion-content">
-                <p>Desenvolvimento do universo visual completo: tipografia, paleta de cores, elementos gráficos...</p>
-            </div>
+            <div class="accordion-content"><p>Desenvolvimento do universo visual completo...</p></div>
         </div>
 
         <div class="accordion-item">
             <button class="accordion-header">Prototipagem <span class="icon">↓</span></button>
-            <div class="accordion-content">
-                <p>Criação de modelos visuais e simulações realistas (mockups) para visualização da marca...</p>
-            </div>
+            <div class="accordion-content"><p>Criação de modelos visuais e simulações realistas...</p></div>
         </div>
 
         <div class="accordion-item">
             <button class="accordion-header">Manual de marca <span class="icon">↓</span></button>
-            <div class="accordion-content">
-                <p>Documento técnico detalhado com todas as diretrizes de uso da marca para manter a consistência.</p>
-            </div>
+            <div class="accordion-content"><p>Documento técnico detalhado com todas as diretrizes...</p></div>
         </div>
     </section>
 
@@ -392,19 +361,16 @@
         <div class="footer-line"></div>
         <div class="footer-top">
             <div class="footer-contact-title">Contatos</div>
-            
             <div class="footer-email-box">
                 <div class="social-links">
                     <a href="mailto:vizzumo@gmail.com" target="_blank" class="social-item">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M227.32,28.68a16,16,0,0,0-15.66-4.08l-.15,0L19.57,82.84a16,16,0,0,0-2.49,29.8L102,154l41.3,84.87A15.86,15.86,0,0,0,157.74,248q.69,0,1.38-.06a15.88,15.88,0,0,0,14-11.51l58.2-191.94c0-.05,0-.1,0-.15A16,16,0,0,0,227.32,28.68ZM157.83,231.85l-.05.14,0-.07-40.06-82.3,48-48a8,8,0,0,0-11.31-11.31l-48,48L24.08,98.25l-.07,0,.14,0L216,40Z"></path></svg>
                         vizzumo@gmail.com
                     </a>
-
                     <a href="https://behance.net/vizzumo" target="_blank" class="social-item">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M160,80a8,8,0,0,1,8-8h64a8,8,0,0,1,0,16H168A8,8,0,0,1,160,80Zm-24,78a42,42,0,0,1-42,42H32a8,8,0,0,1-8-8V64a8,8,0,0,1,8-8H90a38,38,0,0,1,25.65,66A42,42,0,0,1,136,158ZM40,116H90a22,22,0,0,0,0-44H40Zm80,42a26,26,0,0,0-26-26H40v52H94A26,26,0,0,0,120,158Zm128-6a8,8,0,0,1-8,8H169a32,32,0,0,0,56.59,11.2,8,8,0,0,1,12.8,9.61A48,48,0,1,1,248,152Zm-17-8a32,32,0,0,0-62,0Z"></path></svg>
                         behance.net/vizzumo
                     </a>
-
                     <a href="https://instagram.com/vizzumo" target="_blank" class="social-item">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path></svg>
                         instagram.com/vizzumo
@@ -413,25 +379,31 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <div class="footer-copyright">
-                ©2026 vizzumo – São Luís/Brasil
-            </div>
-            <div class="footer-links">
-                <a href="#inicio">Voltar ao topo</a>
-            </div>
+            <div class="footer-copyright">©2026 vizzumo – São Luís/Brasil</div>
+            <div class="footer-links"><a href="#inicio">Voltar ao topo</a></div>
         </div>
     </footer>
 
     <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script> 
     <script>
-        const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smooth: true });
-        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+        const lenis = new Lenis({ 
+            duration: 1.2, 
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+            smooth: true 
+        });
+
+        function raf(time) { 
+            lenis.raf(time); 
+            requestAnimationFrame(raf); 
+        }
         requestAnimationFrame(raf);
 
         document.querySelectorAll('.accordion-header').forEach(header => {
             header.addEventListener('click', () => {
                 header.parentElement.classList.toggle('active');
+                // Redimensiona o Lenis imediatamente e após a animação
                 lenis.resize();
+                setTimeout(() => lenis.resize(), 500);
             });
         });
     </script>
