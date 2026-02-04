@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vizzumo | Branding & Design de Impacto</title>
+    <title>vizzumo | Branding</title>
     
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap">
@@ -25,7 +25,7 @@
             font-family: 'Inter', sans-serif !important; 
         }
 
-        /* Scrollbar Premium */
+        /* Scrollbar */
         ::-webkit-scrollbar { width: 6px; background-color: var(--bg); }
         ::-webkit-scrollbar-thumb { background-color: var(--primary); border-radius: 10px; }
 
@@ -37,55 +37,57 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Background Dinâmico */
+        /* Background Glow */
         .eclipse-bg {
             position: fixed;
             left: 50%;
-            bottom: -20%;
+            bottom: -10%;
             transform: translateX(-50%);
             width: 100vw;
-            height: 100vh;
-            background: radial-gradient(circle at center, rgba(6, 174, 179, 0.15) 0%, transparent 70%);
+            height: 80vh;
+            background: radial-gradient(circle at center, rgba(6, 174, 179, 0.12) 0%, transparent 70%);
             z-index: -1; 
             pointer-events: none;
-            filter: blur(80px);
+            filter: blur(60px);
         }
 
-        @keyframes subtle-vibration {
-            0%, 100% { transform: translateY(0); opacity: 1; }
-            50% { transform: translateY(-2px); opacity: 0.8; }
+        /* Efeito de Vibração Original Refinado */
+        @keyframes constant-vibration {
+            0% { transform: translate(0); text-shadow: 0 0 5px rgba(6, 174, 179, 0.2); }
+            25% { transform: translate(-0.7px, 0.7px); text-shadow: 0 0 10px rgba(6, 174, 179, 0.5); }
+            50% { transform: translate(0.7px, -0.7px); text-shadow: 0 0 15px rgba(6, 174, 179, 0.7); }
+            75% { transform: translate(-0.7px, -0.7px); text-shadow: 0 0 10px rgba(6, 174, 179, 0.5); }
+            100% { transform: translate(0); text-shadow: 0 0 5px rgba(6, 174, 179, 0.2); }
         }
 
         .vibrate-text {
             display: inline-block;
             color: var(--primary);
             font-weight: 500;
-            position: relative;
-            animation: subtle-vibration 3s ease-in-out infinite;
+            animation: constant-vibration 0.15s linear infinite;
+            will-change: transform;
         }
 
-        /* Nav refinada */
+        /* Navigation */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 30px 5%;
+            padding: 25px 5%;
             position: fixed;
             width: 100%;
             top: 0;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(20px);
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(15px);
             z-index: 1000;
             border-bottom: 1px solid var(--border);
         }
 
-        .nav-logo { height: 18px; width: auto; transition: var(--transition); }
-        .nav-logo:hover { opacity: 0.7; }
-
+        .nav-logo { height: 18px; width: auto; }
         .nav-links a {
             text-decoration: none;
             color: var(--text-muted);
-            margin-left: 40px;
+            margin-left: 30px;
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -95,184 +97,115 @@
 
         /* Header */
         header { 
-            padding: 220px 5% 120px; 
-            max-width: 1400px;
+            padding: 200px 5% 100px; 
+            max-width: 1200px;
             margin: 0 auto;
         }
         .tagline { 
             font-size: 0.75rem; 
             text-transform: uppercase; 
-            margin-bottom: 24px; 
-            color: var(--primary); 
+            margin-bottom: 20px; 
+            color: var(--text-muted); 
             letter-spacing: 4px;
-            font-weight: 600;
         }
         h1 {
-            font-size: clamp(2.5rem, 7vw, 5.5rem);
+            font-size: clamp(2.2rem, 6vw, 4.5rem);
             font-weight: 400;
-            line-height: 1.05;
-            letter-spacing: -2px;
+            line-height: 1.1;
+            letter-spacing: -1px;
         }
 
-        /* Seções Gerais */
+        /* Seções */
         .section-header {
             padding: 0 5%;
-            margin-bottom: 60px;
-            max-width: 1400px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-bottom: 50px;
+            max-width: 1200px;
+            margin: 0 auto 50px;
         }
         .section-header h2 {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             color: var(--text-muted);
             border-bottom: 1px solid var(--border);
-            padding-bottom: 20px;
-            display: block;
-            width: 100%;
+            padding-bottom: 15px;
         }
 
-        /* Grid de Projetos */
+        /* Projetos */
         .projects {
-            padding: 0 5% 100px;
+            padding: 0 5% 80px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px 40px;
-            max-width: 1400px;
+            gap: 40px;
+            max-width: 1200px;
             margin: 0 auto;
         }
         
-        .project-card { 
-            text-decoration: none; 
-            color: inherit; 
-            group: hover;
-        }
-        
+        .project-card { text-decoration: none; color: inherit; }
         .project-image { 
-            background-color: #0a0a0a; 
-            aspect-ratio: 16/11; 
-            margin-bottom: 24px; 
+            background-color: #111; 
+            aspect-ratio: 16/10; 
+            margin-bottom: 20px; 
             overflow: hidden; 
-            border-radius: 2px;
+            border-radius: 4px;
             border: 1px solid var(--border);
         }
-        
         .project-image img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
-            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+            width: 100%; height: 100%; object-fit: cover; 
+            transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
         }
-        
-        .project-card:hover .project-image img { transform: scale(1.05); }
-        
-        .project-info p { 
-            font-size: 0.75rem; 
-            color: var(--primary); 
-            text-transform: uppercase; 
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-        }
-        .project-info h2 { 
-            font-size: 1.8rem; 
-            font-weight: 400; 
-            transition: var(--transition);
-        }
-        .project-card:hover .project-info h2 { padding-left: 10px; color: var(--primary); }
+        .project-card:hover .project-image img { transform: scale(1.06); }
+        .project-info p { font-size: 0.75rem; color: var(--primary); text-transform: uppercase; margin-bottom: 5px; }
+        .project-info h2 { font-size: 1.5rem; font-weight: 500; transition: var(--transition); }
+        .project-card:hover .project-info h2 { color: var(--primary); }
 
-        /* Accordion Moderno */
-        .deliverables-container { 
-            padding: 100px 5%; 
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .accordion-item {
-            background: transparent;
-            margin-bottom: 0;
-            border-bottom: 1px solid var(--border);
-        }
-        
+        /* Accordion */
+        .deliverables-container { padding: 80px 5%; max-width: 1200px; margin: 0 auto; }
+        .accordion-item { border-bottom: 1px solid var(--border); }
         .accordion-header {
-            width: 100%;
-            padding: 40px 0;
-            background: none;
-            border: none;
-            color: var(--text-main);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            font-size: 1.5rem;
-            transition: var(--transition);
+            width: 100%; padding: 35px 0; background: none; border: none;
+            color: #fff; display: flex; justify-content: space-between;
+            align-items: center; cursor: pointer; font-size: 1.3rem; transition: var(--transition);
         }
-        
         .accordion-header:hover { color: var(--primary); }
-        .accordion-header .icon { font-weight: 300; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
-        
         .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            max-height: 0; overflow: hidden;
+            transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .accordion-content p { padding-bottom: 40px; color: var(--text-muted); font-size: 1.1rem; max-width: 700px; }
-        .accordion-item.active .accordion-content { max-height: 300px; }
-        .accordion-item.active .icon { transform: rotate(135deg); }
+        .accordion-content p { padding: 0 0 30px; color: var(--text-muted); }
+        .accordion-item.active .accordion-content { max-height: 200px; }
+        .accordion-item.active .icon { transform: rotate(45deg); color: var(--primary); }
+        .icon { transition: transform 0.4s ease; font-size: 1.5rem; font-weight: 300; }
 
         /* CTA */
         .cta-section {
-            padding: 150px 5%;
-            text-align: center;
-            background: linear-gradient(to top, rgba(6, 174, 179, 0.05), transparent);
+            padding: 120px 5%; text-align: center;
+            background: radial-gradient(circle at top, rgba(6, 174, 179, 0.05), transparent);
         }
-
+        .cta-section h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); max-width: 800px; margin: 0 auto 40px; font-weight: 500; }
         .cta-button {
-            display: inline-block;
-            padding: 25px 60px;
-            background-color: var(--text-main);
-            color: var(--bg);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.8rem;
-            border-radius: 100px;
-            transition: var(--transition);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-top: 40px;
+            display: inline-block; padding: 22px 50px; background: #fff; color: #000;
+            text-decoration: none; font-weight: 600; font-size: 0.8rem; border-radius: 50px;
+            transition: var(--transition); text-transform: uppercase; letter-spacing: 2px;
         }
-
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(6, 174, 179, 0.2);
-            background-color: var(--primary);
-            color: white;
-        }
+        .cta-button:hover { transform: scale(1.05); background: var(--primary); color: #fff; }
 
         /* Footer */
-        footer { padding: 80px 5% 40px; max-width: 1400px; margin: 0 auto; }
-        .footer-top { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 80px; }
-        .footer-contact-title { font-size: 2.5rem; letter-spacing: -1px; }
-        
+        footer { padding: 80px 5% 40px; max-width: 1200px; margin: 0 auto; border-top: 1px solid var(--border); }
+        .footer-top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; margin-bottom: 60px; }
+        .footer-contact-title { font-size: 2rem; color: var(--primary); font-weight: 500; }
         .social-item { 
-            text-decoration: none; color: var(--text-muted); 
-            display: flex; align-items: center; gap: 15px;
-            margin-bottom: 15px; transition: var(--transition);
+            text-decoration: none; color: var(--text-muted); display: flex; 
+            align-items: center; gap: 10px; margin-bottom: 12px; transition: 0.3s;
         }
-        .social-item:hover { color: var(--primary); transform: translateX(10px); }
-        .social-item svg { width: 20px; fill: currentColor; }
-
-        .footer-bottom { 
-            border-top: 1px solid var(--border);
-            padding-top: 40px; display: flex; justify-content: space-between;
-            font-size: 0.75rem; color: #555; text-transform: uppercase; letter-spacing: 1px;
-        }
+        .social-item:hover { color: #fff; transform: translateX(5px); }
+        .footer-bottom { display: flex; justify-content: space-between; font-size: 0.7rem; color: #555; text-transform: uppercase; letter-spacing: 1px; }
 
         @media (max-width: 768px) {
             .projects { grid-template-columns: 1fr; }
             .nav-links { display: none; }
-            .footer-top { flex-direction: column; gap: 50px; }
-            h1 { font-size: 3rem; }
+            h1 { font-size: 2.5rem; }
+            .footer-top { flex-direction: column; }
         }
     </style>
 </head>
@@ -280,55 +213,65 @@
     <div class="eclipse-bg"></div>
 
     <nav>
-        <a href="#" class="logo-link"><img src="vizzumo.png" alt="vizzumo" class="nav-logo"></a>
+        <div class="logo">
+            <a href="#"><img src="vizzumo.png" alt="vizzumo" class="nav-logo"></a>
+        </div>
         <div class="nav-links">
-            <a href="#projetos">Trabalhos</a>
-            <a href="#entregaveis">Serviços</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#servicos">Serviços</a>
             <a href="https://wa.me/5598991317021">Contato</a>
         </div>
     </nav>
 
-    <header>
-        <p class="tagline">Estratégia & Identidade Visual</p>
-        <h1>Criamos marcas que <span class="vibrate-text">vibram</span> e dominam o digital.</h1>
+    <header id="inicio">
+        <p class="tagline">Branding & design de marca</p>
+        <h1>Para marcas que querem <span class="vibrate-text">vibrar</span> no mercado.</h1>
     </header>
 
     <section id="projetos">
-        <div class="section-header"><h2>Projetos Selecionados</h2></div>
+        <div class="section-header"><h2>Trabalhos Selecionados</h2></div>
         <div class="projects">
             <a href="#" class="project-card">
                 <div class="project-image"><img src="Frame 8.png" alt="Quinta do Norte"></div>
-                <div class="project-info"><p>Visual Identity</p><h2>Quinta do Norte</h2></div>
+                <div class="project-info"><p>Identidade Visual</p><h2>Quinta do Norte</h2></div>
             </a>
             <a href="#" class="project-card">
                 <div class="project-image"><img src="Frame 9.png" alt="DoceDela"></div>
-                <div class="project-info"><p>Branding</p><h2>DoceDela</h2></div>
+                <div class="project-info"><p>Identidade Visual</p><h2>DoceDela</h2></div>
+            </a>
+            <a href="#" class="project-card">
+                <div class="project-image"><img src="Frame 6.png" alt="III JAJUR"></div>
+                <div class="project-info"><p>Estratégia</p><h2>III JAJUR</h2></div>
+            </a>
+            <a href="#" class="project-card">
+                <div class="project-image"><img src="Frame 7.png" alt="Torre do Sol"></div>
+                <div class="project-info"><p>Hospitalidade</p><h2>Torre do Sol</h2></div>
             </a>
         </div>
     </section>
 
-    <section id="entregaveis" class="deliverables-container">
-        <div class="section-header" style="padding:0"><h2>Como ajudamos seu negócio</h2></div>
+    <section id="servicos" class="deliverables-container">
+        <div class="section-header" style="padding:0"><h2>Nossas Soluções</h2></div>
         
         <div class="accordion-item">
-            <button class="accordion-header">Branding Core <span class="icon">+</span></button>
-            <div class="accordion-content"><p>Definição de DNA, voz e posicionamento estratégico para o mercado moderno.</p></div>
+            <button class="accordion-header">Logotipo <span class="icon">+</span></button>
+            <div class="accordion-content"><p>Símbolos memoráveis construídos com precisão matemática e estética.</p></div>
         </div>
 
         <div class="accordion-item">
             <button class="accordion-header">Identidade Visual <span class="icon">+</span></button>
-            <div class="accordion-content"><p>Sistemas visuais completos, do logotipo à paleta cromática e tipografia.</p></div>
+            <div class="accordion-content"><p>Um ecossistema visual completo que comunica a essência da sua marca.</p></div>
         </div>
 
         <div class="accordion-item">
-            <button class="accordion-header">Experiência Digital <span class="icon">+</span></button>
-            <div class="accordion-content"><p>Prototipagem de interfaces e presença digital de alto impacto visual.</p></div>
+            <button class="accordion-header">Manual da Marca <span class="icon">+</span></button>
+            <div class="accordion-content"><p>Guia técnico para garantir que sua marca seja aplicada corretamente em qualquer lugar.</p></div>
         </div>
     </section>
 
     <section class="cta-section">
-        <h2>Vamos criar algo lendário juntos?</h2>
-        <a href="https://wa.me/5598991317021" target="_blank" class="cta-button">Iniciar Projeto</a>
+        <h2>Pronto para elevar sua identidade visual para o próximo nível?</h2>
+        <a href="https://wa.me/5598991317021" target="_blank" class="cta-button">Solicitar Proposta</a>
     </section>
 
     <footer>
@@ -336,19 +279,18 @@
             <div class="footer-contact-title">vizzumo.</div>
             <div class="social-links">
                 <a href="mailto:vizzumo@gmail.com" class="social-item">vizzumo@gmail.com</a>
-                <a href="https://instagram.com/vizzumo" class="social-item">Instagram</a>
                 <a href="https://behance.net/vizzumo" class="social-item">Behance</a>
+                <a href="https://instagram.com/vizzumo" class="social-item">Instagram</a>
             </div>
         </div>
         <div class="footer-bottom">
             <div>©2026 vizzumo</div>
-            <div>São Luís — Brasil</div>
+            <div>São Luís — Maranhão</div>
         </div>
     </footer>
 
     <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script> 
     <script>
-        // Smooth Scroll (Lenis)
         const lenis = new Lenis();
         function raf(time) {
             lenis.raf(time);
@@ -356,16 +298,11 @@
         }
         requestAnimationFrame(raf);
 
-        // Accordion
         document.querySelectorAll('.accordion-header').forEach(header => {
             header.addEventListener('click', () => {
                 const item = header.parentElement;
-                const isOpen = item.classList.contains('active');
-                
-                document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('active'));
-                if(!isOpen) item.classList.add('active');
-                
-                setTimeout(() => lenis.resize(), 500);
+                item.classList.toggle('active');
+                setTimeout(() => lenis.resize(), 600);
             });
         });
     </script>
